@@ -1,6 +1,6 @@
 # Agio
 
-This repository contains the Agio front-end interface, including the web app and all.
+This repository contains the Agio frontend interface, including the web app and all.
 
 ## Local Development
 
