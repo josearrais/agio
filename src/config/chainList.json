@@ -1,0 +1,26 @@
+[
+  {
+    "chainId": 1,
+    "network": "eth",
+    "name": "Ethereum",
+    "label": "Ethereum Mainnet",
+    "rpcUrl": "https://eth.meowrpc.com/",
+    "enabled": true
+  },
+  {
+    "chainId": 137,
+    "network": "polygon",
+    "name": "Polygon",
+    "label": "Polygon Mainnet",
+    "rpcUrl": "https://polygon.meowrpc.com/",
+    "enabled": false
+  },
+  {
+    "chainId": 43114,
+    "network": "avalanche",
+    "name": "Avalanche",
+    "label": "Avalanche C-Chain",
+    "rpcUrl": "https://avax.meowrpc.com/",
+    "enabled": false
+  }
+]
