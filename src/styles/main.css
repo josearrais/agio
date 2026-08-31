@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Manrope:regular,600,700&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  * {
+    font-family: 'Manrope', 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bg {
+  background: url('../assets/images/studio-ghibli-valley.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translate3d(0, 100px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp .6s ease-out .1s;
+}
+
+@keyframes fadeInUpDelay {
+  0% {
+    transform: translate3d(0, 100px, 0);
+    opacity: 0;
+  }
+  33% {
+    transform: translate3d(0, 100px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUpDelay {
+  animation: fadeInUpDelay .9s ease-out .1s;
+}
+
+.block-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.block-indicator.loading {
+  background-color: #10b981;
+  animation: pulse 1s infinite;
+}
+
+.block-indicator.error {
+  background-color: #ef4444;
+}
+
+.block-indicator.pulse::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #10b981;
+  border-radius: 50%;
+  animation: ripple 1s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

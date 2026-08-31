@@ -1,0 +1,38 @@
+[
+  {
+    "chainId": 10,
+    "network": "optimism",
+    "name": "Optimism",
+    "label": "Optimism Mainnet",
+    "rpcUrl": "https://10.rpc.thirdweb.com/",
+    "blockExplorerUrl": "https://explorer.optimism.io",
+    "enabled": true
+  },
+  {
+    "chainId": 1,
+    "network": "eth",
+    "name": "Ethereum",
+    "label": "Ethereum Mainnet",
+    "rpcUrl": "https://eth.meowrpc.com/",
+    "blockExplorerUrl": "https://etherscan.io",
+    "enabled": true
+  },
+  {
+    "chainId": 137,
+    "network": "polygon",
+    "name": "Polygon",
+    "label": "Polygon Mainnet",
+    "rpcUrl": "https://polygon.meowrpc.com/",
+    "blockExplorerUrl": "https://polygonscan.com",
+    "enabled": false
+  },
+  {
+    "chainId": 43114,
+    "network": "avalanche",
+    "name": "Avalanche",
+    "label": "Avalanche C-Chain",
+    "rpcUrl": "https://avax.meowrpc.com/",
+    "blockExplorerUrl": "https://snowtrace.io",
+    "enabled": false
+  }
+]

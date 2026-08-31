@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Default",
+    "url": "default",
+    "priority": 1,
+    "enabled": true
+  },
+  {
+    "name": "Superchain Token List",
+    "url": "https://static.optimism.io/optimism.tokenlist.json",
+    "priority": 2,
+    "enabled": false
+  }
+]
