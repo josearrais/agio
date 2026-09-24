@@ -6,7 +6,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='swap' element={<Swap />} />
+        <Route path='/swap' element={<Swap />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
