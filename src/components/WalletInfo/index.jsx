@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAccount, useDisconnect, useBalance, useEnsName, useChainId } from 'wagmi';
 import { formatUnits } from 'viem';
-import { ChevronDownIcon, ChevronUpIcon, DocumentDuplicateIcon, ArrowRightStartOnRectangleIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, ChevronUpIcon, DocumentDuplicateIcon, ArrowRightStartOnRectangleIcon, CheckIcon } from '@heroicons/react/24/outline';
 
 const WalletInfo = () => {
   const { address, isConnected } = useAccount();
@@ -17,6 +17,7 @@ const WalletInfo = () => {
   });
   const { data: ensName } = useEnsName({ address });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   if (!isConnected || !address) return null;
 
@@ -44,6 +45,8 @@ const WalletInfo = () => {
   const copyAddress = async () => {
     try {
       await navigator.clipboard.writeText(address);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 500);
     } catch (err) {
       console.error('Failed to copy address:', err);
     }
@@ -111,7 +114,7 @@ const WalletInfo = () => {
             onClick={() => setIsDropdownOpen(false)}
           />
 
-          <div className="absolute left-0 lg:right-0 lg:left-auto w-64 mt-4 overflow-hidden bg-white/10 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl z-50">
+          <div className="absolute right-0 w-64 mt-4 overflow-hidden bg-white/10 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl z-50">
             <div className="p-4 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="flex-1">
@@ -137,8 +140,12 @@ const WalletInfo = () => {
                 onClick={copyAddress}
                 className="w-full flex items-center gap-3 px-3 py-2 hover:bg-white/20 rounded-lg transition-all duration-300"
               >
-                <DocumentDuplicateIcon className="w-4 h-4" />
-                <span>Copy address</span>
+                {copied ? (
+                  <CheckIcon className="w-4 h-4" />
+                ) : (
+                  <DocumentDuplicateIcon className="w-4 h-4" />
+                )}
+                <span>{copied ? 'Copied' : 'Copy address'}</span>
               </button>
 
               <button
